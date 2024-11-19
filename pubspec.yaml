@@ -1,0 +1,43 @@
+name: flutter_application_1
+description: "A new Flutter project."
+
+# Previene publicar accidentalmente el paquete en pub.dev
+publish_to: 'none'
+
+# Versión de la aplicación
+version: 1.0.0+1
+
+# Especifica la versión del SDK de Dart requerida
+environment:
+  sdk: ^3.5.1
+
+# Dependencias necesarias para la aplicación
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.0.5
+  cupertino_icons: ^1.0.8
+  firebase_core: ^3.8.0
+  firebase_auth: ^5.3.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Puedes añadir tus assets personalizados aquí
+  # Ejemplo:
+  # assets:
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
+
+  # Puedes añadir tus fuentes personalizadas aquí
+  # Ejemplo:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
