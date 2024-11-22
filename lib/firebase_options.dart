@@ -7,13 +7,13 @@ import 'package:flutter/foundation.dart'
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
 /// Example:
-/// ```dart
+/// dart
 /// import 'firebase_options.dart';
 /// // ...
 /// await Firebase.initializeApp(
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
-/// ```
+///
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -56,6 +56,7 @@ class DefaultFirebaseOptions {
     projectId: 'twitter-clon-e069c',
     storageBucket: 'twitter-clon-e069c.firebasestorage.app',
   );
+
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDSFHvyaVv3J6Y5iUaLLn2VT-758tCt20g',
     appId: '1:213628458384:ios:6be1b4456e2cafa1a90f15',

@@ -3,6 +3,7 @@ import 'package:flutter_application_1/Components/my_botton.dart';
 import 'package:flutter_application_1/Components/my_loading_circle.dart';
 import 'package:flutter_application_1/Components/my_text_field.dart';
 import 'package:flutter_application_1/services/auth/auth_service.dart';
+import 'package:flutter_application_1/services/database/database_service.dart';
 
 class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
@@ -13,6 +14,7 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final _auth = AuthService();
+  final _db = DatabaseService();
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emialController = TextEditingController();
   final TextEditingController pwController = TextEditingController();
@@ -23,9 +25,12 @@ class _RegisterPageState extends State<RegisterPage> {
       try {
         await _auth.registerEmialPassword(
             emialController.text, pwController.text);
+
         if (mounted) hideLoadingCircle(context);
+
+        await _db.saveUserInfoInFirebase(
+            name: nameController.text, email: emialController.text);
       } catch (e) {
-        if (mounted) hideLoadingCircle(context);
         if (mounted) {
           showDialog(
             context: context,
