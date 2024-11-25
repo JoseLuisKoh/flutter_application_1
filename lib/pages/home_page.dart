@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Components/my_drawer.dart';
 import 'package:flutter_application_1/Components/my_input_alert_box.dart';
 import 'package:flutter_application_1/Components/my_post_tile.dart';
+import 'package:flutter_application_1/helper/navigate_pages.dart';
 import 'package:flutter_application_1/services/database/database_provider.dart';
 import 'package:provider/provider.dart';
 import '../models/post.dart';
@@ -76,7 +77,11 @@ class _HomePageState extends State<HomePage> {
             itemBuilder: (context, index) {
               final post = posts[index];
 
-              return MyPostTitle(post: post);
+              return MyPostTitle(
+                post: post,
+                onUserTap: () => goUserPage(context, post.uid),
+                onPostTap: () => goPostPage(context, post),
+              );
             },
           );
   }
